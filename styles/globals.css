@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+/* TODO: use tailwind  */
+body {
+  background-color: #000;
+  font-family: sans-serif;
+}
