@@ -1,12 +1,10 @@
 
 import React from 'react'
-import type { IServices } from '../data'
+import type { IServices } from '../type'
 
 type Props = {
   service: IServices
 }
-
-
 
 const ServiceCard: React.FC<Props> = ({ service: { Icon, title, about } }) => {
 
