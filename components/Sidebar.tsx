@@ -16,8 +16,6 @@ const Sidebar = () => {
         className="w-32 h-32 mx-auto rounded-full"
         src="/avatar.jpg"
         alt="User Avatar"
-        height="300"
-        width="300"
       />
       <h3 className="my-4 text-3xl font-medium tracking-wider font-kaushan">
         <span className="text-green">Yuenu</span>
