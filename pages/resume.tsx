@@ -1,7 +1,7 @@
 import { languages, tools } from "../data"
 import { Bar } from '../components'
 
-const resume = () => {
+const Resume = () => {
   return (
     <div className="px-6 py-2">
       {/* eduction & exp */}
@@ -56,4 +56,4 @@ const resume = () => {
   )
 }
 
-export default resume
+export default Resume

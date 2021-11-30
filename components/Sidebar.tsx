@@ -67,7 +67,7 @@ const Sidebar = () => {
       <button 
         onClick={changeThemeHandler}
         className="w-8/12 px-5 py-2 mt-4 text-white rounded-full bg-gradient-to-r from-green to-blue-400">
-        Change theme
+        {theme} UI
         </button>
     </div>
   );
