@@ -31,14 +31,14 @@ const Index: NextPage = () => {
 
 export default Index
 
-// export const getServerSideProps = async (context: GetServerSidePropsContext)=> {
+export const getServerSideProps = async (context: GetServerSidePropsContext)=> {
 
-//   const res = await fetch('http://localhost:3000/api/services')
-//   const data = await res.json()
+  const res = await fetch(`${process.env.VERCEL_URL}/api/services`)
+  const data = await res.json()
 
-//   return {
-//     props: {
-//       services: data.services
-//     }
-//   }
-// }
+  return {
+    props: {
+      endpoint: process.env.VERCEL_URL
+    }
+  }
+}

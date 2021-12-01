@@ -19,16 +19,16 @@ const Sidebar = () => {
   return (
     <div>
       <Image
-        className="mx-auto rounded-full"
-        src="/avatar.jpg"
+        className="object-cover mx-auto rounded-full"
+        src="/avatar.jpeg"
         alt="User Avatar"
         width={128}
         height={128}
         layout="intrinsic"
       />
       <h3 className="my-4 text-3xl font-medium tracking-wider font-kaushan">
-        <span className="text-green">Yuenu</span>
-        Hsu
+        <span className="text-green">Josh</span>
+        &nbsp;Hsu
       </h3>
       <p className="px-2 py-1 my-3 bg-gray-200 rounded-full dark:bg-dark-200">
         Frontend Developer
