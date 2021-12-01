@@ -2,15 +2,11 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { services } from '../../data';
 
-type Data = {
-  name: string
-}
-
 const Services = (req: NextApiRequest, res: NextApiResponse) => {
-  
+
   // By default get request
 
-  res.status(200).json({services})
+  res.status(200).json({ services })
 }
 
 export default Services
