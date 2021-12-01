@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion'
 import React, { useState } from 'react'
+import { fadeInUp, routeAnimation, stagger } from '../animations'
 import ProjectCard from '../components/ProjectCard'
 import ProjectNavbar from '../components/ProjectsNavbar'
 import { projects as projectsData } from '../data'
@@ -20,21 +22,21 @@ const Projects = () => {
   }
 
   return (
-    <div className="px-5 py-2 overflow-auto" style={{ minHeight: '65vh' }}>
+    <motion.div variants={routeAnimation} initial="initial" animate="animate" className="px-5 py-2 overflow-auto" style={{ minHeight: '65vh' }}>
       <ProjectNavbar handleerFilterCategory={handleerFilterCategory} active={active} />
 
-      <div className="relative grid grid-cols-12 gap-4 my-3">
+      <motion.div variants={stagger} initial="initial" animate="animate" className="relative grid grid-cols-12 gap-4 my-3">
         {
           projects.map(project => {
             return (
-              <div className="col-span-12 p-2 sm:col-span-6 md:col-span-4 rounded-xl" key={project.name}>
+              <motion.div variants={fadeInUp} className="col-span-12 p-2 sm:col-span-6 md:col-span-4 rounded-xl" key={project.name}>
                 <ProjectCard project={project} />
-              </div>
+              </motion.div>
             )
           })
         }
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
 
 
 
