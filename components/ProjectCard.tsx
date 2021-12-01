@@ -8,11 +8,14 @@ import { motion } from 'framer-motion'
 import { fadeInUp, stagger } from '../animations'
 
 type Props = {
-  project: IProject
+  project: IProject,
+  showDetail: number|null,
+  setShowDetail:(id: number| null) => void
 }
 
-const ProjectCard: React.FC<Props> = ({ project }) => {
+const ProjectCard: React.FC<Props> = ({ project, showDetail, setShowDetail }) => {
   const {
+    id,
     name,
     description,
     image_path,
@@ -22,17 +25,16 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
     key_techs
   } = project
 
-  const [showDetail, setShowDetail] = useState(false)
 
   return (
     <div>
-      <Image src={image_path} alt={name} className="cursor-pointer" onClick={() => setShowDetail(true)} width={300} height={150} layout="responsive" />
+      <Image src={image_path} alt={name} className="cursor-pointer" onClick={() => setShowDetail(id)} width={300} height={150} layout="responsive" />
       <p className="my-2 text-center">{name}</p>
 
-      {showDetail &&
-        <div className="absolute top-0 left-0 z-10 grid w-full h-auto p-2 text-black bg-gray-100 md:grid-cols-2 gap-x-12 dark:text-white dark:bg-dark-100">
+      {showDetail === id &&
+        <div className="absolute top-0 left-0 z-10 grid w-full h-auto p-2 text-black bg-gray-100 rounded-lg md:p-8 md:grid-cols-2 gap-x-8 dark:text-white dark:bg-dark-100">
           <motion.div variants={stagger} initial="initial" animate="animate">
-            <motion.div variants={fadeInUp}>
+            <motion.div variants={fadeInUp} className="border-4 border-gray-200 ">
               <Image src={image_path} alt={name} width={300} height={150} layout="responsive" />
             </motion.div>
 
@@ -58,7 +60,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
               }
             </div>
 
-            <button onClick={() => setShowDetail(false)} className="absolute p-1 bg-gray-200 rounded-full top-3 right-3 focus:outline-none dark:bg-dark-200">
+            <button onClick={() => setShowDetail(null)} className="absolute p-1 bg-gray-200 rounded-full top-3 right-3 focus:outline-none dark:bg-dark-200">
               <MdClose size={30}></MdClose>
             </button>
           </motion.div>

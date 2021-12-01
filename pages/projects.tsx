@@ -21,6 +21,8 @@ const Projects = () => {
     setActive(category)
   }
 
+  const [showDetail, setShowDetail] = useState<number|null>(null)
+
   return (
     <motion.div variants={routeAnimation} initial="initial" animate="animate" className="px-5 py-2 overflow-auto" style={{ minHeight: '65vh' }}>
       <ProjectNavbar handleerFilterCategory={handleerFilterCategory} active={active} />
@@ -30,7 +32,7 @@ const Projects = () => {
           projects.map(project => {
             return (
               <motion.div variants={fadeInUp} className="col-span-12 p-2 sm:col-span-6 md:col-span-4 rounded-xl" key={project.name}>
-                <ProjectCard project={project} />
+                <ProjectCard project={project} showDetail={showDetail} setShowDetail={setShowDetail} />
               </motion.div>
             )
           })
