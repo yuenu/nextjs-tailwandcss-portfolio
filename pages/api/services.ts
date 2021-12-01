@@ -6,9 +6,11 @@ type Data = {
   name: string
 }
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+const Services = (req: NextApiRequest, res: NextApiResponse) => {
   
   // By default get request
 
   res.status(200).json({services})
 }
+
+export default Services

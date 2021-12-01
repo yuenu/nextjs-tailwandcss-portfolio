@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { GiTie } from "react-icons/gi";
 import { GrFormLocation } from "react-icons/gr";
@@ -18,10 +18,13 @@ const Sidebar = () => {
   }
   return (
     <div>
-      <img
-        className="w-32 h-32 mx-auto rounded-full"
+      <Image
+        className="mx-auto rounded-full"
         src="/avatar.jpg"
         alt="User Avatar"
+        width={128}
+        height={128}
+        layout="intrinsic"
       />
       <h3 className="my-4 text-3xl font-medium tracking-wider font-kaushan">
         <span className="text-green">Yuenu</span>
