@@ -43,10 +43,10 @@ const Sidebar = () => {
       </a>
       {/* social icon */}
       <div className="flex justify-around w-8/12 mx-auto my-5 text-green-500 md:w-full">
-        <a href="">
+        <a href="https://github.com/yuenu" aria-label="github">
           <AiFillGithub className="w-8 h-8 cursor-pointer" />
         </a>
-        <a href="">
+        <a href="www.linkedin.com/in/josh-hsu-yuenu" aria-label="linkedin">
           <AiFillLinkedin className="w-8 h-8 cursor-pointer" />
         </a>
       </div>

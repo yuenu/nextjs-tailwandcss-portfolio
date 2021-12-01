@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import Head from 'next/head'
 import React, { useState } from 'react'
 import { fadeInUp, routeAnimation, stagger } from '../animations'
 import ProjectCard from '../components/ProjectCard'
@@ -21,28 +22,29 @@ const Projects = () => {
     setActive(category)
   }
 
-  const [showDetail, setShowDetail] = useState<number|null>(null)
+  const [showDetail, setShowDetail] = useState<number | null>(null)
 
   return (
-    <motion.div variants={routeAnimation} initial="initial" animate="animate" className="px-5 py-2 overflow-auto" style={{ minHeight: '65vh' }}>
-      <ProjectNavbar handleerFilterCategory={handleerFilterCategory} active={active} />
+    <>
+      <Head>
+        <title>Web Developer | Project | Josh Hsu</title>
+      </Head>
+      <motion.div variants={routeAnimation} initial="initial" animate="animate" className="px-5 py-2 overflow-auto" style={{ minHeight: '65vh' }}>
+        <ProjectNavbar handleerFilterCategory={handleerFilterCategory} active={active} />
 
-      <motion.div variants={stagger} initial="initial" animate="animate" className="relative grid grid-cols-12 gap-4 my-3">
-        {
-          projects.map(project => {
-            return (
-              <motion.div variants={fadeInUp} className="col-span-12 p-2 sm:col-span-6 md:col-span-4 rounded-xl" key={project.name}>
-                <ProjectCard project={project} showDetail={showDetail} setShowDetail={setShowDetail} />
-              </motion.div>
-            )
-          })
-        }
+        <motion.div variants={stagger} initial="initial" animate="animate" className="relative grid grid-cols-12 gap-4 my-3">
+          {
+            projects.map(project => {
+              return (
+                <motion.div variants={fadeInUp} className="col-span-12 p-2 sm:col-span-6 md:col-span-4 rounded-xl" key={project.name}>
+                  <ProjectCard project={project} showDetail={showDetail} setShowDetail={setShowDetail} />
+                </motion.div>
+              )
+            })
+          }
+        </motion.div>
       </motion.div>
-    </motion.div>
-
-
-
-
+    </>
   )
 }
 
